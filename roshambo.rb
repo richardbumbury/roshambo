@@ -20,17 +20,19 @@ loop do
   begin
     puts 'Enter \'r\' for rock, \'p\' for paper, or \'s\' for scissors.'
     hand_1 = gets.chomp.downcase
-    puts 'Please choose \'r,\' \'p,\' or \'s,\'' if hand_1 != OPTIONS.keys
   end until OPTIONS.keys.include?(hand_1)
 
   hand_2 = OPTIONS.keys.sample
 
   if hand_1 == 'r' && hand_2 == 's' || hand_1 == 'p' && hand_2 == 'r' || hand_1 == 's' && hand_2 == 'p'
+    puts "You chose #{ hand_1 } and the computer chose #{ hand_2 }."
     message(hand_1)
-    puts 'You win!'
+    puts 'You won!'
   elsif hand_1 == hand_2
+    puts "You chose #{ hand_1 } and the computer chose #{ hand_2 }."
     puts 'You tied!'
   else
+    puts "You chose #{ hand_1 } and the computer chose #{ hand_2 }."
     message(hand_2)
     puts 'You lost!'
   end
