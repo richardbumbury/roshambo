@@ -25,11 +25,11 @@ loop do
   hand_2 = OPTIONS.keys.sample
 
   if hand_1 == 'r' && hand_2 == 's' || hand_1 == 'p' && hand_2 == 'r' || hand_1 == 's' && hand_2 == 'p'
-    puts "You chose #{ hand_1 } and the computer chose #{ hand_2 }."
+    puts "You chose #{ OPTIONS[hand_1] } and the computer chose #{ OPTIONS[hand_2] }."
     message(hand_1)
     puts 'You won!'
   elsif hand_1 == hand_2
-    puts "You chose #{ hand_1 } and the computer chose #{ hand_2 }."
+    puts "You chose #{ OPTIONS[hand_1] } and the computer chose #{ OPTIONS[hand_2] }."
     puts 'You tied!'
   else
     puts "You chose #{ hand_1 } and the computer chose #{ hand_2 }."
