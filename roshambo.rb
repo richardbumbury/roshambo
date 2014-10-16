@@ -32,7 +32,7 @@ loop do
     puts "You chose #{ OPTIONS[hand_1] } and the computer chose #{ OPTIONS[hand_2] }."
     puts 'You tied!'
   else
-    puts "You chose #{ hand_1 } and the computer chose #{ hand_2 }."
+    puts "You chose #{ OPTIONS[hand_1] } and the computer chose #{ OPTIONS[hand_2] }."
     message(hand_2)
     puts 'You lost!'
   end
