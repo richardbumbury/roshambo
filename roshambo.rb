@@ -1,44 +1,53 @@
 # roshambo.rb
 
 puts 'Play Rock-Paper-Scissors!'
-puts ''
-puts 'Rock breaks scissors, paper covers rock, and scissors cuts paper.'
+puts "\nRock breaks scissors, paper covers rock, and scissors cuts paper."
 
 OPTIONS = { 'r' => 'rock', 'p' => 'paper', 's' => 'scissors' }
 def message(winning_hand)
   case winning_hand
   when 'r'
-    puts 'Rock broke scissors!'
+    puts "\nRock breaks scissors!"
   when 'p'
-    puts 'Paper wrapped rock!'
+    puts "\nPaper wraps rock!"
   when 's'
-    puts 'Scissors cut paper!'
+    puts "\nScissors cuts paper!"
   end
 end
 
 loop do
   begin
-    puts 'Enter \'r\' for rock, \'p\' for paper, or \'s\' for scissors.'
-    hand_1 = gets.chomp.downcase
+    puts "\nEnter \'r\' for rock, \'p\' for paper, or \'s\' for scissors."
+    puts
+        hand_1 = gets.chomp.downcase
   end until OPTIONS.keys.include?(hand_1)
 
   hand_2 = OPTIONS.keys.sample
 
-  if hand_1 == 'r' && hand_2 == 's' || hand_1 == 'p' && hand_2 == 'r' || hand_1 == 's' && hand_2 == 'p'
-    puts "You chose #{ OPTIONS[hand_1] } and the computer chose #{ OPTIONS[hand_2] }."
+  if hand_1 == 'r' && hand_2 == 's' ||
+     hand_1 == 'p' && hand_2 == 'r' ||
+     hand_1 == 's' && hand_2 == 'p'
+    puts "\nYou chose #{OPTIONS[hand_1]}" \
+         " and the computer chose #{OPTIONS[hand_2]}."
     message(hand_1)
-    puts 'You won!'
+    puts "\nYou won!"
   elsif hand_1 == hand_2
-    puts "You chose #{ OPTIONS[hand_1] } and the computer chose #{ OPTIONS[hand_2] }."
-    puts 'You tied!'
+    puts "\nYou chose #{OPTIONS[hand_1]}" \
+         " and the computer chose #{OPTIONS[hand_2]}."
+    puts "\nYou tied!"
   else
-    puts "You chose #{ OPTIONS[hand_1] } and the computer chose #{ OPTIONS[hand_2] }."
+    puts "\nYou chose #{OPTIONS[hand_1]}" \
+         " and the computer chose #{OPTIONS[hand_2]}."
     message(hand_2)
-    puts 'You lost!'
+    puts "\nYou lost!"
   end
-  puts 'Play again? (Y/N)'
+
+  puts "\nPlay again? (Y/N)"
+  puts
+  
   break if gets.chomp.downcase != 'y'
-  puts ''
+
+  system("clear")
 end
 
-puts 'Thanks for playing!'
+puts "\nThanks for playing!"
