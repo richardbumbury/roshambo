@@ -44,10 +44,8 @@ loop do
 
   puts "\nPlay again? (Y/N)"
   puts
-  
-  break if gets.chomp.downcase != 'y'
 
-  system("clear")
+  break if gets.chomp.downcase != 'y'
 end
 
 puts "\nThanks for playing!"

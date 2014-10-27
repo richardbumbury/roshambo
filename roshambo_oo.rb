@@ -40,7 +40,6 @@ class Game
   end
 
   def intro
-    system("clear")
     puts "\nPlay Rock-Paper-Scissors!"
     puts "\nRock breaks scissors, paper covers rock, and scissors cuts paper."
   end
@@ -62,13 +61,13 @@ class Game
     elsif (player.choice == 'r' && computer.choice == 's') ||
           (player.choice == 's' && computer.choice == 'p') ||
           (player.choice == 'p' && computer.choice == 'r')
-      puts "\nYou picked #{OPTIONS[(player.choice)]} and the" \
-           " computer picked #{OPTIONS[(computer.choice)]}."
+      puts "\nYou chose #{OPTIONS[(player.choice)]} and the" \
+           " computer chose #{OPTIONS[(computer.choice)]}."
       message(player.choice)
       puts "\nYou won!"
     else
-      puts "\nYou picked #{OPTIONS[(player.choice)]} and the" \
-           " computer picked #{OPTIONS[(computer.choice)]}."
+      puts "\nYou chose #{OPTIONS[(player.choice)]} and the" \
+           " computer chose #{OPTIONS[(computer.choice)]}."
       message(computer.choice)
       puts "\nThe computer won!"
     end
