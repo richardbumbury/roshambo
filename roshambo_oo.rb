@@ -1,5 +1,6 @@
-class Player
+# roshambo_oo.rb
 
+class Player
   attr_accessor :choice
   attr_reader :name
 
@@ -9,7 +10,6 @@ class Player
 end
 
 class Human < Player
-
   def picks_hand
     begin
       puts "\nEnter \'r\' for rock, \'p\' for paper, or \'s\' for scissors."
@@ -22,14 +22,12 @@ class Human < Player
 end
 
 class Computer < Player
-
   def picks_hand
     self.choice = Game::OPTIONS.keys.sample
   end
 end
 
 class Game
-
   OPTIONS = { 'r' => 'rock', 'p' => 'paper', 's' => 'scissors' }
 
   attr_reader :player, :computer
@@ -40,6 +38,7 @@ class Game
   end
 
   def intro
+    system 'clear'
     puts "\nPlay Rock-Paper-Scissors!"
     puts "\nRock breaks scissors, paper covers rock, and scissors cuts paper."
   end
@@ -74,9 +73,9 @@ class Game
   end
 
   def replay
-    play_again_choice = "n"
+    play_again_choice = 'n'
 
-    while play_again_choice != "y"
+    while play_again_choice != 'y'
       puts "\nWould you like to play again? (Y/N)"
       puts
 
@@ -88,7 +87,7 @@ class Game
       end
 
       if play_again_choice == 'y'
-        game = Game.new.play
+        Game.new.play
       elsif play_again_choice == 'n'
         puts "\nThanks for playing!"
         exit
@@ -105,4 +104,4 @@ class Game
   end
 end
 
-game = Game.new.play
+Game.new.play

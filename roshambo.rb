@@ -1,8 +1,5 @@
 # roshambo.rb
 
-puts 'Play Rock-Paper-Scissors!'
-puts "\nRock breaks scissors, paper covers rock, and scissors cuts paper."
-
 OPTIONS = { 'r' => 'rock', 'p' => 'paper', 's' => 'scissors' }
 def message(winning_hand)
   case winning_hand
@@ -16,10 +13,15 @@ def message(winning_hand)
 end
 
 loop do
+  system 'clear'
+
+  puts 'Play Rock-Paper-Scissors!'
+  puts "\nRock breaks scissors, paper covers rock, and scissors cuts paper."
+
   begin
     puts "\nEnter \'r\' for rock, \'p\' for paper, or \'s\' for scissors."
     puts
-        hand_1 = gets.chomp.downcase
+    hand_1 = gets.chomp.downcase
   end until OPTIONS.keys.include?(hand_1)
 
   hand_2 = OPTIONS.keys.sample
