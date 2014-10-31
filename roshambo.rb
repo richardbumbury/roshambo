@@ -14,10 +14,8 @@ end
 
 loop do
   system 'clear'
-
   puts 'Play Rock-Paper-Scissors!'
   puts "\nRock breaks scissors, paper covers rock, and scissors cuts paper."
-
   begin
     puts "\nEnter \'r\' for rock, \'p\' for paper, or \'s\' for scissors."
     puts

@@ -14,9 +14,7 @@ class Human < Player
     begin
       puts "\nEnter \'r\' for rock, \'p\' for paper, or \'s\' for scissors."
       puts
-
       self.choice = gets.chomp.downcase
-
     end until Game::OPTIONS.keys.include?(choice)
   end
 end
